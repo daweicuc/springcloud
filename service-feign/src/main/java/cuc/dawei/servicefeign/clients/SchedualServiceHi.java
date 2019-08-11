@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Date 2019/8/10 0:14
  * @Version 1.0
  */
+
+//通过@ FeignClient（“服务名”），来指定调用哪个服务
 @FeignClient(value = "service-hi",fallback = SchedualServiceHiHystric.class)
 public interface SchedualServiceHi {
     @RequestMapping(value = "/hi",method = RequestMethod.GET)
